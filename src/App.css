@@ -1,38 +1,146 @@
+ /* Establecemos un fondo de pantalla relacionado con libros */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 20px;
+  background-image: url('https://images.unsplash.com/photo-1569972496-2bbd6d4c4b04'); /* Fondo de biblioteca desde Unsplash */
+  background-size: cover;
+  background-position: center;
+  color: white;
   min-height: 100vh;
+  font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-attachment: fixed; /* Fija el fondo mientras se hace scroll */
+}
+
+/* Estilo para el título */
+header h1 {
+  font-size: 3rem;
+  margin-top: 50px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
   color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilo de la lista de libros */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  width: 150px; /* Tamaño adecuado de la tarjeta */
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-item img {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%; /* Imagen ocupa toda la tarjeta */
+  height: 200px; /* Establece la altura para la imagen */
+  object-fit: cover; /* La imagen cubre el área sin distorsionarse */
+}
+
+.book-item h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.book-item p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.book-item a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.book-item a:hover {
+  color: #0056b3;
+}
+
+/* Rating y comentarios */
+.rating span {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.comment-section textarea {
+  width: 100%;
+  height: 60px;
+  margin-top: 8px;
+  padding: 10px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.like-dislike button {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.like-dislike button:hover {
+  background-color: #218838;
 }
